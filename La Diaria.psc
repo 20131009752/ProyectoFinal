@@ -1,4 +1,10 @@
 Algoritmo La_Diaria
+	///definir las variables con nombres mas desciptivos
+	///utilice camel case
+	
+	///implemente funsiones para la optimizacion del codigo
+	
+	///comentar la funcionalidad de los diferentes segmentos
 	definir alea1,alea2 Como Entero
 	Definir n,x Como Entero
 	Definir j,respuesta Como Caracter
