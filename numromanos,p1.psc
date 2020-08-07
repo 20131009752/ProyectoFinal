@@ -1,12 +1,23 @@
 Algoritmo sin_titulo
+	// colocar nombres mas descriptivos para las variables
+	// debera utilizar camel case para definirlas
 	Definir pa,pa1 Como Caracter
 	Definir n1,n2,n3,i Como Entero
+	
 	Escribir "ingrese el numero "
 	leer pa
+	
 	pa=Mayusculas(pa)
 	n1=Longitud(pa)
+	
+	
+	//hacerlo funcional ya que todavia no hace nada
+	
 	Para i<-1 Hasta n1 Con Paso 1 Hacer
 		pa1=pa1+SubCadena(pa,n2+1,n2+1)
+		
+		// utilizar la instruccion segun para evitar tantas condiciones
+		// esta disponible en la ventana de comandos y se explico en la primera reunion
 		si pa1 = "I" Entonces
 			n3=n3+1
 			SiNo
@@ -35,10 +46,10 @@ Algoritmo sin_titulo
 					finsi
 				finsi
 			finsi
-			
 		pa1=""
 		n2=n2+1
 	Fin Para
 	Escribir n3
+	//recordar que el numero lo debe escribir en letras
 FinAlgoritmo
 
