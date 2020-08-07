@@ -1,4 +1,16 @@
 Algoritmo El_ahorcado
+	//Dfinir las variables con camel case
+	// ejemplo	álabraParaAdivinar
+	
+	//comentar el funcionamiento de cada segmento de codigo
+	
+	//al selecionar una letra de la palabra elimina la prmera y no la muestra
+	//debe corregis ere error
+	
+	//colocar un dibujo que represente al ahorcado
+	
+	//implemente funciones para reducir y optimizar el codigo
+	
 	Definir palabraparaadivinar Como Caracter
 	Definir letrascorrectas Como Caracter
 	Definir letrasdeljugador como caracter
