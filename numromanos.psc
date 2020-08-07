@@ -1,4 +1,14 @@
 Algoritmo sin_titulo
+	//recordar que una matriz inicia desde cero
+	
+	//Existe un ciclo infinito que se debe solucionar
+	
+	// utilizar nombres mas descriptivos para las variables
+	// utilizar camel case para ello
+	
+	//comentar la funcionalidad de cada seccion o bloque de instruccion
+	
+	//implementar funsiones  para optimizar y reducir el codigo
 	//////////////////////////////////
 	Definir n1,n2,n3,n4 Como Entero//ciclos
 	Definir r1,r2,p1,p2,pru Como entero//contador
