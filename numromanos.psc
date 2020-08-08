@@ -3,6 +3,9 @@ Algoritmo sin_titulo
 	//Existe un ciclo infinito que se debe solucionar
 	//implementar funsiones  para optimizar y reducir el codigo
 	//////////////////////////////////
+	Definir condicionDeCaracter Como Entero//se usa en ciclo mientras para evitar que el usuario ingrese un caracter incorrecto
+	Definir cicloDeCondicionuno,cicloDeCondiciondos Como Entero//se usan dentro del ciclo mientras 
+	//////////////////////////////////
 	Definir primerCiclo,segundoCiclo,tercerCiclo Como Entero//ciclos
 	Definir LongitudDeNUmero Como Entero//mide la Longitud de caracteres del numero romano ingresado
 	Definir primerResultado,segundoResultado Como Entero //se usan para almacenar los resultados individuales 
@@ -31,8 +34,27 @@ Algoritmo sin_titulo
 	letraRomana[6]="D"
 	letraRomana[7]="M"
 	/////////////////////////////////
+	//esta sesion se usa para evitar que se ingrese un caracter el cual no esta definido
+	Mientras condicionDeCaracter= 0 hacer
+		Limpiar Pantalla
 	Escribir "Ingrese el Numero Romano "
 	leer numeroRomano
+	numeroRomano=Mayusculas(numeroRomano)
+	LongitudDeNUmero=Longitud(numeroRomano)
+	Para cicloDeCondicionuno<-1 Hasta LongitudDeNUmero Con Paso 1 Hacer
+		caracterUno=caracterUno+SubCadena(numeroRomano,posicionUno+1,posicionUno+1)
+		Para cicloDeCondiciondos<-1 Hasta 7 Con Paso 1 Hacer
+			
+			si caracterUno=letraRomana[cicloDeCondiciondos] Entonces
+				condicionDeCaracter=condicionDeCaracter+1
+				 
+			FinSi
+		Fin Para
+		caracterUno=""
+	Fin Para
+FinMientras
+
+	/////////////////////////////////
 	numeroRomano=Mayusculas(numeroRomano)
 	LongitudDeNUmero=Longitud(numeroRomano)
 	posicionDos=1
