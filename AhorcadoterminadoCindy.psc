@@ -130,6 +130,65 @@ Algoritmo sin_titulo
 		
 	Hasta Que intentos == 7 o AdivinoPalabra(letrasMostradas, Longitud(palabraAzar)) == Verdadero
 	
+	Segun intentos Hacer
+		0:
+			Escribir "";
+			Escribir "";
+			Escribir "";
+			Escribir "";
+			Escribir "";
+			Escribir "";
+		1:
+			Escribir "";
+			Escribir "";
+			Escribir "";
+			Escribir "";
+			Escribir "";
+			Escribir "___________";
+		2:
+			Escribir "|";
+			Escribir "|";
+			Escribir "|";
+			Escribir "|";
+			Escribir "|";
+			Escribir "___________";
+		3:
+			Escribir "|------";
+			Escribir "|";
+			Escribir "|";
+			Escribir "|";
+			Escribir "|";
+			Escribir "___________";
+		4:
+			Escribir "|------";
+			Escribir "|     |";
+			Escribir "|     0";
+			Escribir "|";
+			Escribir "|";
+			Escribir "___________";
+		5:
+			Escribir "|------";
+			Escribir "|     |";
+			Escribir "|     0";
+			Escribir "|    /|";
+			Escribir "|";
+			Escribir "___________";
+		6:
+			Escribir "|------";
+			Escribir "|     |";
+			Escribir "|     0";
+			Escribir "|    /|\" ;
+			Escribir "|";
+			Escribir "___________";
+		7:
+			Escribir "|------";
+			Escribir "|     |";
+			Escribir "|     0";
+			Escribir "|    /|\";
+			Escribir "|    / \";
+			Escribir "___________";
+	FinSegun
+	
 	Si AdivinoPalabra(letrasMostradas, Longitud(palabraAzar)) == Verdadero Entonces
 		Escribir "Felicidades la adivinaste"
 	SiNo
