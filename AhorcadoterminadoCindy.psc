@@ -1,8 +1,8 @@
-//Escribre las letras adivinadas por el usuario
-//Parámetros:
-//letrasMostradas: contiene las letras 
-//tamanio: tamaño del arreglo
 Funcion adivino <- AdivinoPalabra (letrasMostradas, tamanio)
+	//Escribre las letras adivinadas por el usuario
+	//Parámetros:
+	//letrasMostradas: contiene las letras 
+	//tamanio: tamaño del arreglo
 	Definir adivino Como Logico
 	Definir pos Como Entero
 	adivino = Verdadero
@@ -13,13 +13,14 @@ Funcion adivino <- AdivinoPalabra (letrasMostradas, tamanio)
 	Fin Para
 Fin Funcion
 
-//Escribre las letras encontradas por el usuario
-//
-//Parámetros:
-//palabraFinal: contiene la palabra a adivinar
-//letrasMostradas: contiene las letras 
-//tamanio: tamaño del arreglo
+
 Funcion  EscribirLetrasEncontradas(palabraFinal, letrasMostradas, tamanio)
+	//Escribre las letras encontradas por el usuario
+	//
+	//Parámetros:
+	//palabraFinal: contiene la palabra a adivinar
+	//letrasMostradas: contiene las letras que ha asertado
+	//tamanio: tamaño del arreglo
 	definir pos Como Entero
 	Para pos = 0 Hasta tamanio - 1 Con Paso 1 Hacer
 		Si letrasMostradas[pos] == Verdadero Entonces
@@ -50,7 +51,7 @@ Funcion  EscribirLetrasInsertadas(letrasInsertadas, tamanio)
 	Fin Para
 	Escribir " "
 Fin Funcion
-//Definicion de las variables a utilizar
+
 Algoritmo sin_titulo
 	Definir op Como Caracter
 	Definir pos Como Entero //Variables para controlar ciclos
@@ -192,7 +193,7 @@ Algoritmo sin_titulo
 	Si AdivinoPalabra(letrasMostradas, Longitud(palabraAzar)) == Verdadero Entonces
 		Escribir "Felicidades la adivinaste"
 	SiNo
-		Escribir "perdiste eres duro"
+		Escribir "Lo siento has perdido"
 	FinSi
 finsi
 
