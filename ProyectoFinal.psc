@@ -42,7 +42,7 @@ Funcion EjecutarOpcion(op)
 			Hasta Que seguir = "NO"
 			Limpiar Pantalla
 		2:
-			Escribir "Llamar a la funcion que corresponde 2"
+			LaDiaria()
 		3:
 			Escribir "Llamar a la funcion que corresponde 3"
 		4:
@@ -352,4 +352,69 @@ Funcion JuegoAhorcado()
 		Escribir ""
 	FinSi
 FinFuncion
+
+/// Juego de la diaria -------------------------------------------------------------
+
+Funcion TituloDiaria( )
+	//Muestra las opciones del menú principal
+	
+	Escribir "* * * * * * * * * * * * * * * * * * * * * * *"
+	Escribir "*          SORTEO DE LA DIARIA              *"
+	Escribir "* * * * * * * * * * * * * * * * * * * * * * *"
+Fin Funcion
+Funcion  LaDiaria()
+	///definir las variables con nombres mas desciptivos
+	///utilice camel case
+	
+	///implemente funsiones para la optimizacion del codigo
+	
+	///comentar la funcionalidad de los diferentes segmentos
+	definir alea1,alea2 Como Entero
+	Definir n,x Como Entero
+	Definir j,respuesta Como Caracter
+	
+	Limpiar Pantalla
+	
+	Repetir
+		TituloDiaria()
+		Escribir "Ingrese un numero de 2 digitos, puede ser del 00 hasta el 99"
+		Leer n
+		Escribir ""
+		
+		alea1=azar(9)
+		alea2=azar(9)
+		
+		Escribir "El primer digito ganador es:"
+		escribir alea1
+		Escribir "El segundo digito ganador es:"
+		escribir alea2
+		j=ConvertirATexto(alea1)+ConvertirATexto(alea2)
+		Escribir ""
+		Escribir "Presiones Enter para observar sus resultados"
+		Esperar Tecla
+		Limpiar Pantalla
+		TituloDiaria()
+		Escribir "El numero que usted ingreso es:"
+		Escribir  n
+		escribir "El numero ganador es: "
+		Escribir j
+		Escribir ""
+		x=ConvertirANumero(j)
+		si n=x Entonces
+			Escribir "Felicidades has sido es el afortunado ganador"
+		SiNo
+			Escribir "Has perdido"
+			escribir "Espero tengas mas suerte para la proxima :("
+		FinSi
+		Escribir ""
+		
+		Escribir "Desea seguir jugando SI/NO"
+		Leer respuesta
+		respuesta = Mayusculas(respuesta)
+		Limpiar Pantalla
+		
+	Hasta Que respuesta="NO"
+FinFuncion
+
+
 
