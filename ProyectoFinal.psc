@@ -44,7 +44,8 @@ Funcion EjecutarOpcion(op)
 		2:
 			LaDiaria()
 		3:
-			Escribir "Llamar a la funcion que corresponde 3"
+			Limpiar Pantalla
+			PiedraPapelTijera()
 		4:
 			Repetir
 				Limpiar Pantalla
@@ -60,7 +61,8 @@ Funcion EjecutarOpcion(op)
 			Hasta Que seguir = "NO"
 			Limpiar Pantalla
 		5:
-			Escribir "Llamar a la funcion que corresponde 5"
+			
+			NumerosRomanos()
 		6:
 			Escribir "Llamar a la funcion que corresponde 6"
 		De Otro Modo:
@@ -415,6 +417,201 @@ Funcion  LaDiaria()
 		
 	Hasta Que respuesta="NO"
 FinFuncion
+
+///Comversion de numeros romanos -------------------------------------------------------------
+Funcion TituloRomano( )
+	//Muestra las opciones del menú principal
+	
+	Escribir "* * * * * * * * * * * * * * * * * * * * * * *"
+	Escribir "*         CONVERSION DE ROMANOS             *"
+	Escribir "* * * * * * * * * * * * * * * * * * * * * * *"
+Fin Funcion
+
+Funcion NumerosRomanos()
+	//recordar que una matriz inicia desde cero 	
+	//Existe un ciclo infinito que se debe solucionar
+	//implementar funsiones  para optimizar y reducir el codigo
+	//////////////////////////////////
+	Definir condicionDeCaracter Como Entero//se usa en ciclo mientras para evitar que el usuario ingrese un caracter incorrecto
+	Definir cicloDeCondicionuno,cicloDeCondiciondos Como Entero//se usan dentro del ciclo mientras 
+	//////////////////////////////////
+	Definir primerCiclo,segundoCiclo,tercerCiclo Como Entero//ciclos
+	Definir LongitudDeNUmero Como Entero//mide la Longitud de caracteres del numero romano ingresado
+	Definir primerResultado,segundoResultado Como Entero //se usan para almacenar los resultados individuales 
+	definir posicionUno,posicionDos Como entero//se usan para extraer caracteres
+	Definir  numeroRomano,caracterUno,caracterDos Como Caracter//alamcen p
+	Definir comparadorUno,comparadorDos Como Entero//comparan el valor individual de los caracteres 
+	Definir resultadoFinal Como Entero//salida
+	//////////////////////////////////
+	Definir equivalenteDecimal Como Entero//matris igual
+	Dimension equivalenteDecimal[8]
+	equivalenteDecimal[1]=1
+	equivalenteDecimal[2]=5
+	equivalenteDecimal[3]=10
+	equivalenteDecimal[4]=50
+	equivalenteDecimal[5]=100
+	equivalenteDecimal[6]=500
+	equivalenteDecimal[7]=1000
+	//////////////////////////////////
+	Definir letraRomana Como Caracter//MATRIS LETRA
+	Dimension letraRomana[8] 
+	letraRomana[1]="I"
+	letraRomana[2]="V"
+	letraRomana[3]="X"
+	letraRomana[4]="L"
+	letraRomana[5]="C"
+	letraRomana[6]="D"
+	letraRomana[7]="M"
+	/////////////////////////////////
+	//esta sesion se usa para evitar que se ingrese un caracter el cual no esta definido
+	Mientras condicionDeCaracter= 0 hacer
+		Limpiar Pantalla
+		TituloRomano()
+		Escribir "Ingrese el Numero Romano "
+		leer numeroRomano
+		numeroRomano=Mayusculas(numeroRomano)
+		LongitudDeNUmero=Longitud(numeroRomano)
+		Para cicloDeCondicionuno<-1 Hasta LongitudDeNUmero Con Paso 1 Hacer
+			caracterUno=caracterUno+SubCadena(numeroRomano,posicionUno+1,posicionUno+1)
+			Para cicloDeCondiciondos<-1 Hasta 7 Con Paso 1 Hacer
+				
+				si caracterUno=letraRomana[cicloDeCondiciondos] Entonces
+					condicionDeCaracter=condicionDeCaracter+1
+					
+				FinSi
+			Fin Para
+			caracterUno=""
+		Fin Para
+	FinMientras
+	
+	/////////////////////////////////
+	numeroRomano=Mayusculas(numeroRomano)
+	LongitudDeNUmero=Longitud(numeroRomano)
+	posicionDos=1
+	/////////////////////////////////
+	Para primerCiclo<-1 Hasta  LongitudDeNUmero Con Paso 1 Hacer
+		//esta sección extrae los caracteres individuales del numero romano ingresado
+		caracterUno=caracterUno+SubCadena(numeroRomano,posicionUno+1,posicionUno+1)
+		caracterDos=caracterDos+Subcadena(numeroRomano,posicionDos+1,posicionDos+1)
+		/////////////////////////////////
+		Para segundoCiclo<-1 Hasta 7 Con Paso 1 Hacer
+			/////////////////////////////////
+			//se extrae un carácter para luego compararlo
+			Mientras comparadorUno=0 Hacer
+				Para tercerCiclo<-1 Hasta 7 Con Paso 1 Hacer
+					
+					si caracterUno=letraRomana[tercerCiclo] Entonces
+						comparadorUno=equivalenteDecimal[tercerCiclo]
+						
+					FinSi
+				FinPara
+				
+			FinMientras
+			/////////////////////////////////
+			//se extrae un carácter para luego compararlo
+			Mientras comparadorDos=0 Hacer
+				Para tercerCiclo<-1 Hasta 7 Con Paso 1 Hacer
+					si caracterDos=letraRomana[tercerCiclo] Entonces
+						comparadorDos=equivalenteDecimal[tercerCiclo]
+						
+					FinSi
+				FinPara
+				comparadorDos=comparadorDos+1
+				
+			FinMientras
+			comparadorDos=comparadorDos-1
+			/////////////////////////////////
+			//se comparan los caracteres ya que si el primero es menor este se resta de lo contrario se suma 
+			si comparadorUno>=comparadorDos Entonces//condicion suma
+				si caracterUno=letraRomana[segundoCiclo] Entonces
+					primerResultado=primerResultado+equivalenteDecimal[segundoCiclo]
+					
+				FinSi
+			SiNo
+				si comparadorUno<comparadorDos Entonces//condicion resta
+					si caracterUno=letraRomana[segundoCiclo] Entonces
+						segundoResultado=segundoResultado+comparadorUno
+						
+					FinSi
+				FinSi
+				
+			FinSi	 
+			/////////////////////////////////
+		FinPara		
+		//se limpia las variables con caracteres para asignarles uno nuevo
+		caracterUno=""
+		caracterDos=""
+		//se suma mas uno para tomar los siguientes caracteres a comparar
+		posicionUno=posicionUno+1
+		posicionDos=posicionDos+1
+		//se limpian las variables para asignarles un nuevo valor a comparar
+		comparadorUno=0
+		comparadorDos=0
+	Fin Para
+	/////////////////////////////////
+	//se restan los resultados de la comparaciones
+	resultadoFinal=primerResultado-segundoResultado
+	/////////////////////////////////
+	Mostrar numeroRomano " ES igual a " resultadoFinal
+	/////////////////////////////////
+	Esperar Tecla
+FinFuncion
+
+
+///Juego de piedra papel o tijera ----------------------------------
+Funcion TituloPPT( )
+	//Muestra las opciones del menú principal
+	
+	Escribir "* * * * * * * * * * * * * * * * * * * * * * *"
+	Escribir "*          SORTEO DE LA DIARIA              *"
+	Escribir "* * * * * * * * * * * * * * * * * * * * * * *"
+Fin Funcion
+
+Funcion PiedraPapelTijera
+	Definir val1,val2,partida,n1,n2,n3 Como Entero
+	Definir respuesta Como Caracter
+	//respuesta=" "
+	Repetir
+		TituloPPT()
+		Escribir " Jugador1 : Ingresa el valor[1 = piedra,2 = papel, 3 = tijeras ]"
+		Leer val1 
+		Limpiar Pantalla
+		Escribir " Jugador2 : Ingresa el valor[1 = piedra,2 = papel, 3 = tijeras ]"
+		Leer val2
+		Limpiar Pantalla
+		Si (val1 <> val2) Entonces
+			Si (val1==1 y val2==3) o ( val1==2 y val2==1) o( val1==2 y val2==3) Entonces
+				Escribir "Gana Jugador 1 "
+				partida <- 0
+				n1=n1+1
+			SiNo
+				Si (val2==1 y val1==3) o ( val2==2 y val1==1) o( val2==2 y val1==3) Entonces
+					Escribir "Gana Jugador 2 "
+					partida <- 0
+					n2=n2+1
+				fin si
+			Fin Si
+		SiNo
+			Limpiar Pantalla 
+			Escribir "Empate"
+			n3=n3+1
+		Fin Si
+		Escribir ""
+		Escribir "Desea seguir jugando si/no:"
+		Leer respuesta
+		respuesta = Minusculas(respuesta)
+		Limpiar Pantalla
+	Hasta Que respuesta="no"
+	TituloPPT()
+	Mostrar "Jugador 1 gano un total de " n1 " veces"
+	Mostrar "Jugador 2 gano un total de " n2 " veces"
+	Mostrar "Empataron un total de " n3 " veces"
+	Mostrar "Presione cualquier tecla para salir."
+	Esperar Tecla
+FinFuncion
+
+
+
 
 
 
